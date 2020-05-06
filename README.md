@@ -65,6 +65,7 @@
    ```
 
 9. Install nvidia driver
+    Try this [link](https://gist.github.com/bogdan-kulynych/f64eb148eeef9696c70d485a76e42c3a) or follow these instructions:
 
    1. Add the official Nvidia PPA to Ubuntu:
       `sudo add-apt-repository ppa:graphics-drivers/ppa`
@@ -149,6 +150,18 @@
     
     echo 'If everything worked fine, reboot now.'
     ```
+    
+    Check installations:
+    ```
+    $ nvidia-smi | grep "Driver Version" | awk '{print $6}'
+    440.82
+    $  nvcc --version | grep "release" | awk '{print $6}' | cut -c2-
+    10.0.130
+    $ locate cupti | grep "libcupti.so." | tail -n1 | sed -r 's/^.*\.so\.//' 
+    10.0.130
+    $ locate cudnn | grep "libcudnn.so." | tail -n1 | sed -r 's/^.*\.so\.//' 
+    7
+    ```
 
 11. Create a new conda env and test GPU on Tensorflow
 
@@ -213,7 +226,7 @@
     ```
 
     Find instructions [here](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
-
+    You may need to add ssh key from GitKraken itself as well. `Preferences/Authentication/GitHub.com`
     
 
 15. Minikube
