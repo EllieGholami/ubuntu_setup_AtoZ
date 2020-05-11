@@ -52,6 +52,12 @@
     sudo apt-get update  
     sudo apt-get install yarn
    
+   # Install aws cli
+   sudo apt-get update && sudo apt-get install awscli
+   
+   # configure your credentials
+   aws configure
+   
    #Status Bar: Indicator Multiload
    sudo apt install indicator-multiload
    
