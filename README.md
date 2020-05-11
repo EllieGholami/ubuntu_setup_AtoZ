@@ -233,7 +233,22 @@
     Now, having the user logout then login again to test if you can use docker without sudo.
     `docker images`. Sometimes you need restart to see the result.
     
-14. PubKey Authentication
+14. NVIDIA Container Toolkit
+
+    ```
+    # Add the package repositories
+    distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+    curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+    
+    sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+    sudo systemctl restart docker
+    
+    # Test nvidia-smi with the latest official CUDA image
+    `docker run --gpus all nvidia/cuda:10.0-base nvidia-smi
+    ```
+    
+15. PubKey Authentication
     Permanently added the RSA host key for this IP address to the list of known hosts.
 
     ```
@@ -245,7 +260,7 @@
     You may need to add ssh key from GitKraken itself as well. `Preferences/Authentication/GitHub.com`
     
 
-15. Minikube
+16. Minikube
 
     ```
     $ sudo apt-get update
@@ -261,7 +276,7 @@
     $ minikube version
     ```
 
-16. Install kubectl
+17. Install kubectl
 
     ```
     curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
@@ -273,7 +288,7 @@
     kubectl version --client
     ```
 
-17. Configure kubectl
+18. Configure kubectl
 
     ```
     minikube start
