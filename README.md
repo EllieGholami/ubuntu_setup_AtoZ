@@ -67,6 +67,11 @@
    sudo apt-get update
    sudo apt-get install typora
    
+   # ffmpeg
+   sudo apt update 
+   sudo apt install ffmpeg
+   ffmpeg -version
+   
    # Chrome, GitKraken, Pycharm, Slack
    ```
 
