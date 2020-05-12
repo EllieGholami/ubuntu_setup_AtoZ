@@ -78,6 +78,16 @@
    
    # Test your installation in new terminal windows
    conda list 
+   
+   # Add pip.conf file to your home directory
+   sudo mkdir -p ~/.config/pip && mv pip.conf ~/.config/pip/pip.conf
+   ```
+   The `pip.conf` file is like this: 
+   
+   ```  
+    [global]
+    index = https://dev:usainbolt2018@nexus.genvis.co/repository/pypi-all/pypi
+    index-url = https://dev:usainbolt2018@nexus.genvis.co/repository/pypi-all/simple
    ```
 
 9. Install nvidia driver
