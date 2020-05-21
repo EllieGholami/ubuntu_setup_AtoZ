@@ -1,4 +1,4 @@
-# Step by step installation of Ubuntu 18.04
+# Ubuntu 18.04 installation and set up steps
 
 1. Make sure you have backup from your data
 
@@ -247,6 +247,14 @@
 
     Now, having the user logout then login again to test if you can use docker without sudo.
     `docker images`. Sometimes you need restart to see the result.
+    
+    Then install Docker Compose
+    ```
+    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    $ sudo chmod +x /usr/local/bin/docker-compose
+    $ docker-compose --version
+    
+    ```
     
 14. NVIDIA Container Toolkit
 
