@@ -52,6 +52,15 @@
     sudo apt-get update  
     sudo apt-get install yarn
    
+   # Install helm version "v2.16.1", version 3 is not working for my projects
+   # Download the correct version from [here](https://github.com/helm/helm/releases)
+   # unpack the file
+   $ tar -zxvf helm-v2.16.7-linux-amd64.tar.gz
+   $ mv linux-amd64/helm /snap/bin/helm
+   
+   # Install typescript
+   sudo npm install -g typescript
+   
    # Install aws cli
    sudo apt-get update && sudo apt-get install awscli
    
